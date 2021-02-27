@@ -1,0 +1,20 @@
+/*
+CREATE TABLE IF NOT EXISTS POST (
+    POST_ID VARCHAR(10) not null primary key,
+    POST_CONTENT VARCHAR(500) not null,
+    POST_OWNER VARCHAR(20) NOT NULL,
+    POST_TIME date NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS FOLLOW (
+    FOLLOW_ID VARCHAR(50) not null primary key,
+    FOLLOWER_ID VARCHAR(20) not null,
+    FOLLOWEE_ID VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS USER (
+    USER_ID VARCHAR(20) not null primary key,
+    USER_NAME VARCHAR(50) not null
+);
+
+*/
