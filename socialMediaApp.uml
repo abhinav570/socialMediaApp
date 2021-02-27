@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.abhinav.socialmedia.controller</OriginalElement>
+  <nodes>
+    <node x="41.82916666666668" y="240.0">com.abhinav.socialmedia.service.PostService</node>
+    <node x="174.0791666666667" y="320.0">com.abhinav.socialmedia.controller.SocialMediaController</node>
+    <node x="0.0" y="80.0">com.abhinav.socialmedia.entity.Post</node>
+    <node x="183.85694444444448" y="80.0">com.abhinav.socialmedia.entity.Follow</node>
+    <node x="314.21388888888896" y="160.0">com.abhinav.socialmedia.service.UserService</node>
+    <node x="135.25" y="160.0">com.abhinav.socialmedia.repository.FollowRepo</node>
+    <node x="16.25" y="160.0">com.abhinav.socialmedia.repository.PostRepo</node>
+    <node x="196.5791666666667" y="240.0">com.abhinav.socialmedia.service.FollowService</node>
+    <node x="243.73194444444448" y="0.0">com.abhinav.socialmedia.entity.User</node>
+    <node x="289.7319444444445" y="80.0">com.abhinav.socialmedia.repository.UserRepo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.abhinav.socialmedia.controller.SocialMediaController" target="com.abhinav.socialmedia.service.UserService">
+      <point x="55.0" y="-15.0" />
+      <point x="311.5791666666667" y="295.0" />
+      <point x="368.21388888888896" y="295.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.PostService" target="com.abhinav.socialmedia.entity.User">
+      <point x="13.5" y="-15.0" />
+      <point x="109.32916666666668" y="215.0" />
+      <point x="124.75000000000001" y="215.0" />
+      <point x="124.75000000000001" y="60.0" />
+      <point x="265.0319444444445" y="60.0" />
+      <point x="-14.199999999999989" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.PostService" target="com.abhinav.socialmedia.repository.FollowRepo">
+      <point x="40.5" y="-15.0" />
+      <point x="136.32916666666668" y="215.0" />
+      <point x="162.75" y="215.0" />
+      <point x="-27.5" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.FollowService" target="com.abhinav.socialmedia.repository.FollowRepo">
+      <point x="-40.0" y="-15.0" />
+      <point x="216.5791666666667" y="215.0" />
+      <point x="217.75" y="215.0" />
+      <point x="27.5" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.FollowService" target="com.abhinav.socialmedia.entity.User">
+      <point x="40.0" y="-15.0" />
+      <point x="296.5791666666667" y="215.0" />
+      <point x="279.2319444444445" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.controller.SocialMediaController" target="com.abhinav.socialmedia.service.PostService">
+      <point x="-55.0" y="-15.0" />
+      <point x="201.5791666666667" y="295.0" />
+      <point x="95.82916666666668" y="295.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.repository.FollowRepo" target="com.abhinav.socialmedia.entity.Follow">
+      <point x="0.0" y="-15.0" />
+      <point x="190.25" y="135.0" />
+      <point x="204.60694444444448" y="135.0" />
+      <point x="-20.75" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.FollowService" target="com.abhinav.socialmedia.entity.Follow">
+      <point x="0.0" y="-15.0" />
+      <point x="256.5791666666667" y="215.0" />
+      <point x="258.1069444444445" y="215.0" />
+      <point x="258.1069444444445" y="135.0" />
+      <point x="246.10694444444448" y="135.0" />
+      <point x="20.75" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.PostService" target="com.abhinav.socialmedia.entity.Post">
+      <point x="-40.5" y="-15.0" />
+      <point x="55.32916666666668" y="215.0" />
+      <point x="5.75" y="215.0" />
+      <point x="5.75" y="135.0" />
+      <point x="17.75" y="135.0" />
+      <point x="-17.75" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.entity.Post" target="com.abhinav.socialmedia.entity.User">
+      <point x="0.0" y="-15.0" />
+      <point x="35.5" y="50.0" />
+      <point x="250.83194444444447" y="50.0" />
+      <point x="-28.400000000000006" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.PostService" target="com.abhinav.socialmedia.repository.PostRepo">
+      <point x="-13.5" y="-15.0" />
+      <point x="82.32916666666668" y="215.0" />
+      <point x="65.25" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.repository.PostRepo" target="com.abhinav.socialmedia.entity.Post">
+      <point x="0.0" y="-15.0" />
+      <point x="65.25" y="135.0" />
+      <point x="53.25" y="135.0" />
+      <point x="17.75" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.UserService" target="com.abhinav.socialmedia.entity.User">
+      <point x="27.0" y="-15.0" />
+      <point x="395.21388888888896" y="135.0" />
+      <point x="398.2319444444445" y="135.0" />
+      <point x="398.2319444444445" y="50.0" />
+      <point x="307.63194444444446" y="50.0" />
+      <point x="28.400000000000013" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.service.UserService" target="com.abhinav.socialmedia.repository.UserRepo">
+      <point x="-27.0" y="-15.0" />
+      <point x="341.21388888888896" y="135.0" />
+      <point x="338.7319444444445" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.repository.UserRepo" target="com.abhinav.socialmedia.entity.User">
+      <point x="0.0" y="-15.0" />
+      <point x="338.7319444444445" y="60.0" />
+      <point x="293.43194444444447" y="60.0" />
+      <point x="14.199999999999989" y="15.0" />
+    </edge>
+    <edge source="com.abhinav.socialmedia.controller.SocialMediaController" target="com.abhinav.socialmedia.service.FollowService">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.2000000000000002" x="172.66666666666663" y="172.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
