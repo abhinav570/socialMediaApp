@@ -4,6 +4,7 @@ import com.abhinav.socialmedia.dto.FollowRequestDto;
 import com.abhinav.socialmedia.dto.PostRequestDto;
 import com.abhinav.socialmedia.dto.ResponseDto;
 import com.abhinav.socialmedia.dto.UserDto;
+import com.abhinav.socialmedia.entity.Post;
 import com.abhinav.socialmedia.service.FollowService;
 import com.abhinav.socialmedia.service.PostService;
 import com.abhinav.socialmedia.service.UserService;
@@ -76,11 +77,12 @@ public class SocialMediaController {
         return ResponseEntity.ok().body(responseDto);
     }
 
-    @GetMapping("/newsFeeds")
+    @GetMapping(value = "/newsFeeds" , produces = "application/json")
     @ApiOperation(value = "Get new feed for the user", notes = "Latest 20 posts will displayed including user's", response = String.class, responseContainer = "List", produces = "application/json")
     @ApiResponses({@ApiResponse(code = 200, message = "success"), @ApiResponse(code = 404, message = "resource you were trying to reach is not found"),@ApiResponse(code = 400, message = "bad request")})
-    public ResponseEntity<List<String>> newsFeeds(@RequestParam String userId){
+    public ResponseEntity<List<Post>> newsFeeds(@RequestParam String userId){
         log.info("new Feeds for user "+userId);
-        return ResponseEntity.ok().body(postService.newsFeeds(userId));
+        List<Post> posts = postService.newsFeeds(userId);
+        return ResponseEntity.ok().body(posts);
     }
 }

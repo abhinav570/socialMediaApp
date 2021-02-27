@@ -1,5 +1,6 @@
 package com.abhinav.socialmedia.service;
 
+import com.abhinav.socialmedia.entity.Post;
 import com.abhinav.socialmedia.repository.FollowRepo;
 import com.abhinav.socialmedia.repository.PostRepo;
 import junit.framework.TestCase;
@@ -38,8 +39,9 @@ public class PostServiceTest extends TestCase {
     @Test
     public void shouldFetchNewsFeed(){
         Mockito.when(followRepo.getFolloweesByFollower(anyString())).thenReturn(asList("user1","user2"));
-        Mockito.when(postRepo.getNewsFeeds(anyList(),anyInt())).thenReturn(asList("post1","post2"));
-        List<String> posts = postService.newsFeeds("user3");
+        Mockito.when(postRepo.getNewsFeeds(anyList(),anyInt())).thenReturn(asList(Post.builder().postId(1L).build(),
+                Post.builder().postId(2L).build()));
+        List<Post> posts = postService.newsFeeds("user3");
         Assert.assertNotNull(posts);
         Assert.assertEquals(posts.size(), 2);
     }

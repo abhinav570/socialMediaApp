@@ -44,9 +44,10 @@ public class PostService {
         postRepo.deleteById(id);
     }
 
-    public List<String> newsFeeds(String followerId) {
+    public List<Post> newsFeeds(String followerId) {
         List<String> followeeList = followRepo.getFolloweesByFollower(followerId);
         followeeList.add(followerId);
-        return postRepo.getNewsFeeds(followeeList, postLimit);
+        List<Post> posts = postRepo.getNewsFeeds(followeeList, postLimit);
+        return posts;
     }
 }

@@ -4,6 +4,7 @@ import com.abhinav.socialmedia.dto.FollowRequestDto;
 import com.abhinav.socialmedia.dto.PostRequestDto;
 import com.abhinav.socialmedia.dto.ResponseDto;
 import com.abhinav.socialmedia.dto.UserDto;
+import com.abhinav.socialmedia.entity.Post;
 import com.abhinav.socialmedia.service.FollowService;
 import com.abhinav.socialmedia.service.PostService;
 import com.abhinav.socialmedia.service.UserService;
@@ -71,7 +72,8 @@ public class SocialMediaControllerTest {
 
     @Test
     public void shouldGetNewsFeed(){
-        when(postService.newsFeeds(any(String.class))).thenReturn(asList("post1","post2"));
+        when(postService.newsFeeds(any(String.class))).thenReturn(asList(Post.builder().postId(1L).build(),
+                Post.builder().postId(2L).build()));
         RequestEntity requestEntity = RequestEntity.get("/newsFeeds?userId=user1").build();
         ResponseEntity<List> responseEntity = RestTemplate.exchange(requestEntity, List.class);
         Assert.assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());

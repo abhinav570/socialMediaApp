@@ -1,12 +1,16 @@
 package com.abhinav.socialmedia.entity;
 
-import lombok.Builder;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Data
 @Table(name = "POST")
 public class Post {
     @Id
