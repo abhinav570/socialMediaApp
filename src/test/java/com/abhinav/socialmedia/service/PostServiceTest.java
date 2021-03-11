@@ -6,7 +6,7 @@ import com.abhinav.socialmedia.repository.PostRepo;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -14,6 +14,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -38,7 +39,9 @@ public class PostServiceTest extends TestCase {
 
     @Test
     public void shouldFetchNewsFeed(){
-        Mockito.when(followRepo.getFolloweesByFollower(anyString())).thenReturn(asList("user1","user2"));
+        List<String> list = new ArrayList<>();
+        list.add("user1");list.add("user2");
+        Mockito.when(followRepo.getFolloweesByFollower(anyString())).thenReturn(list);
         Mockito.when(postRepo.getNewsFeeds(anyList(),anyInt())).thenReturn(asList(Post.builder().postId(1L).build(),
                 Post.builder().postId(2L).build()));
         List<Post> posts = postService.newsFeeds("user3");
